@@ -1,0 +1,36 @@
+FUNCTION CalculateDotProduct(v1,v2: ARRAY OF INTEGER): INTEGER
+VAR
+    dotProduct: INTEGER := 0  // Initialize the dot product to 0
+    n: INTEGER := 0   // Variable to store the length of the vectors
+BEGIN
+    n := LENGTH(v1);  // Get the length of the vectors
+    FOR i FROM 0 TO n - 1 DO
+        dotProduct := dotProduct + v1[i] * v2[i];  // Calculate the dot product
+    END_FOR
+    RETURN dotProduct;  // Return the dot product as the result of the function
+END_FUNCTION
+
+ALGORITHM Problem_2 
+VAR
+    i, j: INTEGER;
+    v1, v2: ARRAY OF REAL[10];  // Arrays to store vector elements
+    result: INTEGER;  // Variable to store the dot product result
+BEGIN
+        write("Enter elements of vector v1 ");
+        FOR j FROM 0 TO 3 DO
+            read(v1[j]);  // Input elements of v1
+        END_FOR
+
+        write("Enter elements of vector v2  ");
+        FOR j FROM 0 TO 3 DO
+            read(v2[j]);  // Input elements of v2
+        END_FOR
+
+        result := CalculateDotProduct(v1, v2);  // Calculate dot product using the function
+
+        IF (result == 0) THEN
+            write("Vectors v1 and v2 are orthogonal.");
+        ELSE
+            write("Vectors v1 and v2 are not orthogonal.");
+        END_IF
+END

@@ -1,0 +1,54 @@
+
+ALGORITHM Problem_1
+VAR
+    tab1, tab2 : ARRAY_OF INTEGER[10];
+    Detected : BOOLEAN
+    sum: INTEGER:= 0
+BEGIN
+    //Loop to read elements into tab1
+    FOR a FROM 0 TO tab1.length STEP 1  DO 
+
+        write ("Enter element of tab1")
+        read (tab1[a])   
+    END_FOR
+    
+    //Loop to read elements into tab2
+    FOR b FROM 0 TO tab2.length STEP 1  DO
+        write ("Enter element of tab2")
+        read (tab2[b])
+    END_FOR
+
+//checks for common elements between tab1 and tab2
+FOR a FROM 0 TO tab1.length-1 STEP 1 DO 
+Detected:=false
+
+FOR b FROM 0 TO tab2.length-1 STEP 1 DO
+
+ IF  (tab1[a] == tab2[b]) THEN
+ Detected:= true
+END_IF
+END_FOR
+
+IF (Detected = false) THEN 
+sum := sum + tab1[a]
+END_IF
+END_FOR
+
+//checks for common elements between tab2 and tab1
+FOR a FROM 0 TO tab2.length-1 STEP 1 DO 
+Detected:=false
+
+FOR b FROM 0 TO tab1.length-1 STEP 1 DO
+
+ IF  (tab2[a] == tab1[b]) THEN
+ Detected:= true
+END_IF
+END_FOR
+
+IF (Detected = false) THEN 
+sum := sum + tab1[a]
+END_IF
+END_FOR
+
+ write (sum)
+END
