@@ -40,7 +40,7 @@ Detected:=false
 
 FOR b FROM 0 TO tab1.length-1 STEP 1 DO
 
- IF  (tab2[a] == tab1[b]) THEN
+ IF  (tab2[b] == tab1[a]) THEN
  Detected:= true
 END_IF
 END_FOR
